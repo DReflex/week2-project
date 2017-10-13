@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src='./script.js'></script>
+    <link rel="stylesheet" href="./style.css">
+
+    <title></title>
+  </head>
+  <body>
+    <div id="navbar" class="navbar">
+      <div class="navbar-head">
+        <h2>Code Player</h2>
+      </div>
+      <div class="navbar-buttons">
+        <button id="html" class="left" type="button" name="button">HTML</button>
+        <button id="css" class="middle" type="button" name="button">CSS</button>
+        <button id="js" class="middle" type="button" name="button">JS</button>
+        <button id="result" class="right" type="button" name="button">Result</button>
+      </div>
+      <div class="navbar-run">
+        <button id="run" class="run" type="button" name="button">Run</button>
+      </div>
+    </div>
+    <div class="box">
+      <div id="html-area" class="text-area">
+
+        <div id="html-label" class="label">HTML</div>
+        <textarea id="htmlCode"  name="html"><h2>This is text</h2></textarea>
+
+      </div>
+      <div  id="css-area" class="text-area">
+
+        <div id="css-label" class="label">CSS</div>
+        <textarea id="cssCode" name="css">html {color: red}</textarea>
+
+      </div>
+      <div id="js-area" class="text-area">
+
+        <div id="js-label" class="label">JS</div>
+        <textarea id="jsCode"  name="js">console.log("dont brake server")</textarea>
+
+      </div>
+      <div id="result-area" class="text-area">
+
+      <iframe id="iframe"></iframe>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
