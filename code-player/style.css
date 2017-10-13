@@ -95,3 +95,12 @@ body{margin:0;padding: 0;}
  }
 textarea{width:100%}
 iframe{width:100%}
+@media screen and (max-width : 620px){
+  .navbar-buttons button{
+    font-size:16px;
+    padding:5px 8px;
+  }
+  .navbar-head{display: none}
+  .box{flex-direction: column;}
+  .text-area{width: 95% !important; height: 200px !important}
+}
