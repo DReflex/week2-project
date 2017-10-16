@@ -1,4 +1,4 @@
-body{margin:0;padding: 0;}
+body{margin:0;padding: 0;  background-color: rgb(147, 147, 147);}
 .navbar{
   margin:0;
   display: flex;
@@ -12,12 +12,19 @@ body{margin:0;padding: 0;}
 .navbar-head h2{
   margin: 6px auto;
 }
+.button-container{
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 .navbar-buttons{
   margin:auto;
   margin-top:5px;
   margin-bottom: 5px;
   display: flex;
   justify-content: center;
+  margin-right:0;
 }
 .navbar-buttons button{
   margin:auto;
@@ -39,12 +46,22 @@ body{margin:0;padding: 0;}
   border-top:1px solid #000;
   border-bottom:1px solid #000;
 }
-.navbar-buttons .right{
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  border-right:1px solid #000;
-  border-top:1px solid #000;
-  border-bottom:1px solid #000;
+ .right{
+   margin:auto;
+   background-color: rgb(189, 189, 189);
+   padding: 8px 15px;
+   text-align: center;
+   text-decoration: none;
+   font-size: 18px;
+   outline: none;
+
+    margin-left: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left:0;
+    border-right:1px solid #000;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
 }
 .navbar-buttons .middle{border-top: 1px solid #000;border-bottom:1px solid #000}
 
@@ -69,38 +86,83 @@ body{margin:0;padding: 0;}
   transition: all 0.3s ease;
 
 }
+.button-clicked{
+  background-color: rgb(119, 119, 119);
+  color:rgb(226, 226, 226);
+
+  transition: all 0.3s ease;
+}
 .navbar-run .button-clicked{
   box-shadow: none;
   border: 2px solid rgb(119, 119, 119);
 }
+
+/* body:  */
 .box{
   margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  background-color: rgb(147, 147, 147);
 }
+.area51{
+  margin:auto;
+  display: flex;
+  flex-direction: row;
+  width:100%;
+}
+
 .box .show{display: flex;}
 .text-area{
   width:100%;
   margin:auto;
   display:none;
   position: relative;
+  flex-direction: column;
+  background-color: rgb(101, 101, 101)
  }
- .label{
-   position:absolute;
-   padding:10px;
-   right:10px;
-   top:10px;
-   border: 1px solid rgb(157, 157, 157);
-   border-radius: 10px;
+ .text-area h2{
+   text-align: center;
+   margin:0;
+   color:rgb(213, 213, 213);
  }
-textarea{width:100%}
-iframe{width:100%}
+
+.result-frame{
+   width:100%;
+   margin: auto;
+   display: none;
+ }
+textarea{
+  width:90%;
+  margin:auto;
+  margin-top: 0;
+  margin-bottom: 10px;
+  background-color: rgb(50, 50, 50);
+  color: rgb(134, 163, 201);
+  border-radius: 8px;
+ }
+iframe{
+  width:90%;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:10px;
+  background: white;
+  outline: none;
+}
+
 @media screen and (max-width : 620px){
   .navbar-buttons button{
-    font-size:16px;
-    padding:5px 8px;
+    font-size:13px;
+    padding:5px 5px;
+  }
+  .right{
+    font-size:13px;
+    padding:5px 5px;
+  }
+  .run{
+    font-size:14px;
+    padding:5px 10px;
   }
   .navbar-head{display: none}
-  .box{flex-direction: column;}
-  .text-area{width: 95% !important; height: 200px !important}
+  .area51{flex-direction: column;}
+  .text-area{width: 95% !important;}
 }

@@ -1,5 +1,6 @@
 body{
-  background: #F8F8F8
+  background: #F8F8F8;
+  margin:0;padding:0;
 }
 .box{
   margin:auto;
@@ -130,7 +131,8 @@ hr{
   border-radius: 8px;
 }
 #popup{position: fixed;display: none; background:#FFF;}
-.popup img{width:100%;}
+#image{width:100%; height:300px;}
+
 .content{
   margin:0;
   font-family: Poppins;
@@ -143,6 +145,10 @@ hr{
 .content figcaption{margin-left:20px;}
 .redirect{display: flex;justify-content: space-between;width:90%;color: #2D9CDB;}
 .redirect a{text-decoration: none}
+.redirect i {
+  font-size: 28px;
+  padding:5px;
+}
 .redirect a:visited {
     color: #2D9CDB;
 }
@@ -155,8 +161,68 @@ hr{
   margin:0;
 
 }
+#close:hover{
+  color:rgb(87, 20, 20);
+  cursor: pointer;
+}
+.figure{
+  position: relative;
+
+}
+.slider-bar{
+  position: absolute;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  height:30px;
+  bottom:0;
+}
+.slider{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width:170px;
+  margin:5px;
+}
+.slider-circle{
+  margin:auto;
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  border:2px solid rgb(255, 255, 255);
+}
+.arrows{
+  margin:auto;
+  margin-top:10%;
+  margin-left: 5%;
+  position: absolute;
+  width:90%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 32px;
+  color:rgba(200, 201, 196, 1);
+}
+.arrow{
+  height:100px;
+  width:60px;
+  display: flex;
+  justify-content: center;
+  padding-top:30px;
+  border-radius: 5px;
+}
+.arrow:hover{
+  background-color: rgba(6, 6, 6, 0.32);
+}
+.slider-circle:hover{
+  background-color: #FFF!important;
+}
+
+
 
 @media screen and (min-width : 176px) and (max-width : 620px){
+  #image{width:100%; height:200px;}
+
   .overlay{height: 100px}
   .single-post{width:75%}
   .news-contain{width:100%; flex-wrap: wrap; flex-direction: column;}
@@ -164,7 +230,7 @@ hr{
   .article{width:60%; padding:10px 15px; font-size: 15px}
   hr{width:0; border: 0}
   .line1{width:0; border:0}
-  .popup{width:90%; margin-top:5px;margin-left: 10px}
+  .popup{margin: 5%;width:90%}
 }
 @media screen and (min-width : 620px) and (max-width : 1024px){
   .overlay{height: 400px}
@@ -172,5 +238,5 @@ hr{
   .title{padding:10px; font-size: 16px}
   .article{padding:10px 15px; font-size: 15px}
   .article2{font-size: 16px}
-  .single-post{width:40%}
+  .single-post{width:30%}
 }

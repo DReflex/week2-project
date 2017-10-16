@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
     <script type="text/javascript" src='./script.js'></script>
     <link rel="stylesheet" href="./style.css">
 
@@ -17,38 +18,43 @@
       <div class="navbar-head">
         <h2>Code Player</h2>
       </div>
-      <div class="navbar-buttons">
-        <button id="html" class="left" type="button" name="button">HTML</button>
-        <button id="css" class="middle" type="button" name="button">CSS</button>
-        <button id="js" class="middle" type="button" name="button">JS</button>
+      <div class="button-container">
+        <div class="navbar-buttons">
+          <button id="html" class="left" type="button" name="button">HTML</button>
+          <button id="css" class="middle" type="button" name="button">CSS</button>
+          <button id="js" class="middle" type="button" name="button">JS</button>
+        </div>
         <button id="result" class="right" type="button" name="button">Result</button>
       </div>
+
       <div class="navbar-run">
         <button id="run" class="run" type="button" name="button">Run</button>
       </div>
     </div>
-    <div class="box">
-      <div id="html-area" class="text-area">
+    <div class="box row">
+      <div class="area51 column">
+        <div id="html-area" class="text-area">
+          <h2>HTML</h2>
+          <textarea id="htmlCode"  name="html"><h2>This is text</h2></textarea>
 
-        <div id="html-label" class="label">HTML</div>
-        <textarea id="htmlCode"  name="html"><h2>This is text</h2></textarea>
+        </div>
+        <div  id="css-area" class="text-area">
+          <h2>CSS</h2>
 
+          <textarea id="cssCode" name="css">html {color: red}</textarea>
+
+        </div>
+        <div id="js-area" class="text-area">
+          <h2>JavaScript</h2>
+
+          <textarea id="jsCode"  name="js">console.log("dont break server")</textarea>
+
+        </div>
       </div>
-      <div  id="css-area" class="text-area">
 
-        <div id="css-label" class="label">CSS</div>
-        <textarea id="cssCode" name="css">html {color: red}</textarea>
+      <div id="result-frame" class="result-frame">
 
-      </div>
-      <div id="js-area" class="text-area">
-
-        <div id="js-label" class="label">JS</div>
-        <textarea id="jsCode"  name="js">console.log("dont break server")</textarea>
-
-      </div>
-      <div id="result-area" class="text-area">
-
-      <iframe id="iframe"></iframe>
+      <iframe id="iframe" class="show"></iframe>
 
       </div>
 

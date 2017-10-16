@@ -3,12 +3,18 @@ $(document).ready(function(){
   var height = $(window).height();
   $("#html-area").addClass("show");
   $("#html").addClass("button-clicked");
+  if($(window).width() < 620){
+    $("textarea").height((height - navHeight)*.6 + "px");
+    $("iframe").height((height - navHeight)*.6 + "px");
+    console.log("hello");
+  }else{
+    $("textarea").height(height - navHeight-50 + "px");
+    $("iframe").height(height - navHeight -10 + "px")
 
-  $("textarea").height(height - navHeight + "px");
-  $("iframe").height(height - navHeight + "px")
+  }
 
   $(".navbar-buttons button").on("click", toggle);
-
+  $("#result").on("click", toggleResult)
   $(".navbar-run button").on("click", function(){
     $(this).addClass("button-clicked", 200);
     showResults();
@@ -17,12 +23,32 @@ $(document).ready(function(){
     },150);
 
   })
-  $("textarea").on("focus", label);
 
 
-})
+ var show = true;
+
 //functions
+function toggleResult(){
+  $("#result-frame").toggleClass("show")
+  $(this).toggleClass("button-clicked")
+  if (show) {
+    if($(window).width() < 620){
+      $("textarea").height((height - navHeight)*.5 + "px")
 
+    }else
+      $("textarea").height((height - navHeight)*.7 + "px")
+  }else {
+    if($(window).width() < 620){
+      $("textarea").height((height - navHeight)*.6 + "px")
+
+    }else
+    $("textarea").height(height - navHeight-50 + "px");
+  }
+
+  show = !show
+
+
+}
 function toggle(){
 
   $(this).toggleClass("button-clicked");
@@ -41,6 +67,9 @@ function toggle(){
       case 3:
       width= "32%";
       break
+      case 4:
+      width = "32%"
+      break
     }
     for (var i = 0; i < arr.length; i++) {
       $("#" + arr[i] + "-area").width(width)
@@ -48,7 +77,6 @@ function toggle(){
 }
 
 function showResults(){
-  console.log($("#cssCode").val())
   $("iframe").contents().find("html")
   .html('<style>'+$("#cssCode").val()+'</style>'+$("#htmlCode").val())
   document.getElementById('iframe').contentWindow.eval($("#jsCode").val())
@@ -68,15 +96,11 @@ function filterClass(){
 }
 function element (element){
 
-  //console.log($("#" + element.id).attr("class"));
   if($("#" + element.id).attr("class").indexOf("button-clicked") !== -1){
     return element.id
   }
 
 }
 
-//
-function label(){
-  $(".label").show();
-  $("#" + this.name + "-label").hide()
-}
+
+})
